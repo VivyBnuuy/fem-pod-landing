@@ -1,0 +1,123 @@
+@use "../util/functions" as util;
+@use "../global/variables" as var;
+@use "../global/typography" as fonts;
+
+.card {
+    display: grid;
+    grid-template: repeat(6, max-content) / auto;
+
+    grid-area: 1 / 1 / 2 / 2;
+
+    z-index: 1;
+
+    margin: util.rem(24);
+
+    &__img {
+        justify-self: center;
+        align-self: center;
+        
+        margin: util.rem(48) 0;
+    }
+
+    &__header {
+        align-self: center;
+
+        font-size: fonts.$mobile-l;
+        font-weight: fonts.$x-light;
+        line-height: util.rem(38);
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--green);
+
+        margin: util.rem(24) 0;
+
+        &-white {
+            color: var(--white);
+        }
+    }
+
+    &__paragraph {
+        align-self: center;
+        justify-self: center;
+
+        text-align: center;
+        font-weight: fonts.$x-light;
+        line-height: util.rem(25);
+        color: var(--gray-blue);
+
+        margin: 0 0 util.rem(32);
+
+        max-width: 60ch;
+    }
+
+    &__logos {
+        display: grid;
+        grid-template: repeat(2, auto) / repeat(2, minmax(auto, util.rem(165)));
+        grid-row-gap: util.rem(24);
+
+        justify-content: center;
+        align-items: center;
+
+        margin: 0 0 util.rem(48);
+
+        &-img {
+            opacity: 50%;
+
+            justify-self: center;
+
+            &:nth-child(1) {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            &:nth-child(2) {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+
+            &:nth-child(3) {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+
+            &:nth-child(4) {
+                grid-area: 2 / 2 / 3 / 3;
+            }
+        }
+    }
+
+    &__input {
+        justify-self: center;
+
+        border-radius: util.rem(32);
+        border-style: solid;
+        border-color: var(--dark-blue);
+
+        background-color: var(--dark-blue);
+
+        font-size: fonts.$font-s;
+
+        padding: util.rem(12) util.rem(32);
+        margin: 0 0 util.rem(16);
+
+        width: 100%;
+        max-width: 60ch;
+    }
+
+    &__submit {
+        justify-self: center;
+        
+        border-radius: util.rem(32);
+        border-style: solid;
+        border-color: var(--green);
+
+        background-color: var(--green);
+
+        font-size: fonts.$font-s;
+        color: var(--very-dark-blue);
+        font-weight: fonts.$bold;
+
+        padding: util.rem(12) util.rem(32);
+        margin: 0 0 util.rem(16);
+
+        width: 100%;
+        max-width: 60ch;
+    }
+}

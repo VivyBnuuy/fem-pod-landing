@@ -1,0 +1,15 @@
+.card {
+    &__input:focus {
+        outline: none;
+
+        color: var(--white);
+    }
+
+    &__submit:hover {
+        cursor: pointer;
+        
+        border-color: var(--light-green);
+
+        background-color: var(--light-green);
+    }
+}

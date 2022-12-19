@@ -1,0 +1,23 @@
+@use "../util/functions" as util;
+@use "../global/variables" as var;
+
+// Font sizes
+$mobile-l: util.rem(26);
+$mobile-m: util.rem(15);
+
+$tablet-l: util.rem(48);
+
+$desktop-l: util.rem(52);
+
+// Shared sizes
+$font-m: util.rem(18);
+$font-s: util.rem(14);
+
+$font-error: util.rem(12);
+
+// Font weights
+
+$bold: 700;
+$medium: 400;
+$light: 300;
+$x-light: 100;

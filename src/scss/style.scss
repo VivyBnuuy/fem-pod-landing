@@ -9,13 +9,11 @@
 
 // Mobile forwards
 @forward "mobile/main";
+@forward "mobile/card";
+@forward "mobile/breakpoints";
 
 // Tablet forwards
-/*
-@forward "tablet/typography";
 @forward "tablet/breakpoints";
-@forward "tablet/main";
-*/
 
 // Desktop forwards
 @forward "desktop/breakpoints";
