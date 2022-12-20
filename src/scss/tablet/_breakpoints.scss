@@ -3,5 +3,139 @@
 @use "../global/typography" as fonts;
 
 @media screen and (min-width: 768px) {
+    .background {
+        background-image: url("../../../assets/tablet/image-host.jpg");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: top right;
+        filter: unset;
+    }
+
+    .card {
+        grid-template: repeat(3, max-content) / auto;
+        grid-row-gap: util.rem(164);
+
+        margin: util.rem(24) util.rem(24) util.rem(0);
+
+        // Hide small container
+        &__small {
+            display: none;
+        }
+
+        // Display big container
+        &__big {
+            display: grid;
+            width: fit-content;
+
+            margin: 0 0 0 util.rem(16);
+            padding: 0 util.rem(16) 0 0;
+
+            background-color: var(--very-dark-blue);
+        }
+
+        // Element styling
+        &__img {
+            justify-self: unset;
+
+            margin: util.rem(16) 0 0 util.rem(16);
+
+            &:nth-child(2){
+                display: block;
+            }
+        }
+
+        &__header {
+            font-size: fonts.$tablet-l;
+            line-height: util.rem(56);
+            text-align: left;
+
+            max-width: 21ch;
+
+            margin: util.rem(96) 0 util.rem(36);
+        }
+
+        &__paragraph {
+            justify-self: start;
+
+            text-align: left;
+            font-size: fonts.$font-m;
+
+            max-width: 40ch;
+
+            margin: 0 0 util.rem(48);
+        }
+
+        &__logos {
+            display: grid;
+            grid-template: auto / repeat(4, auto);
+            grid-area: 5 / 1 / 6 / 2;
+            justify-content: start;
+
+            width: fit-content;
+
+            margin: util.rem(48) 0 0 0;
+
+            &-img {
+                margin: 0 util.rem(48) 0 0;
+
+                // Grid positions for the logo images
+                &:nth-child(1) {
+                    grid-area: 1 / 1 / 2 / 2;
+                }
+                
+                &:nth-child(2) {
+                    grid-area: 1 / 2 / 2 / 3;
+                }
+                
+                &:nth-child(3) {
+                    grid-area: 1 / 3 / 2 / 4;
+                }
+                
+                &:nth-child(4) {
+                    grid-area: 1 / 4 / 2 / 5;
+                }
+            }
+        }
+
+        &__signup {
+            display: grid;
+            grid-template: auto / 60% 40%;
+
+            max-width: 48ch;
+
+            border-radius: util.rem(32);
+            border-style: solid;
+            border-color: var(--dark-blue);
     
+            background-color: var(--dark-blue);
+    
+            font-size: fonts.$font-s;
+    
+            padding: util.rem(2) util.rem(2);
+            margin: 0 0 util.rem(16);
+        }
+
+        &__input {
+            margin: 0;
+        }
+
+        &__submit {
+            margin: 0;
+
+            padding: util.rem(12) util.rem(16);
+        }
+
+        &__pattern {
+            display: block;
+
+            width: util.rem(264);
+            height: util.rem(128);
+    
+            background-image: radial-gradient(circle, var(--green) util.rem(4), var(--very-dark-blue) 1px);
+            background-size: util.rem(32) util.rem(32);
+            background-repeat: space;
+
+            margin-top: util.rem(-43);
+        }
+    }
 }
