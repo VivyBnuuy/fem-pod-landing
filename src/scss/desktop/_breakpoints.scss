@@ -1,1 +1,58 @@
 @use "../util/functions" as util;
+@use "../global/variables" as var;
+@use "../global/typography" as fonts;
+
+@media screen and (min-width: 1080px) {
+    .background {
+        background-image: url("../../../assets/desktop/image-host.jpg");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position-x: 175%;
+        background-position-y: util.rem(144);
+        filter: unset;
+    }
+
+    .card {
+        grid-row-gap: util.rem(109);
+
+        margin: util.rem(24) util.rem(0) util.rem(0) util.rem(144);
+
+        &__img {
+            &:nth-child(2){
+                display: block;
+                margin: util.rem(80) 0 0 0;
+            }
+        }
+
+        &__error {
+            display: none;
+    
+            color: var(--red);
+            font-size: fonts.$font-s;
+    
+            margin: util.rem(8) 0 0 util.rem(32);
+        }
+
+        &__logos {
+            margin: util.rem(64) 0 0 0;
+        }
+
+        &__pattern {
+            justify-self: end;
+            margin: util.rem(-172) 0 0 0;
+
+            background-image: radial-gradient(circle, var(--green) util.rem(4), transparent util.rem(1));
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .background {
+        background-image: url("../../../assets/desktop/image-host.jpg");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-position-y: util.rem(144);
+        filter: unset;
+    }
+}

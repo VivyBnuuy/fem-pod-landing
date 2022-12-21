@@ -73,7 +73,7 @@
 
             width: fit-content;
 
-            margin: util.rem(48) 0 0 0;
+            margin: util.rem(56) 0 0 0;
 
             &-img {
                 margin: 0 util.rem(48) 0 0;
@@ -112,11 +112,19 @@
             font-size: fonts.$font-s;
     
             padding: util.rem(2) util.rem(2);
-            margin: 0 0 util.rem(16);
         }
 
         &__input {
             margin: 0;
+        }
+
+        &__error {
+            display: none;
+    
+            color: var(--red);
+            font-size: fonts.$font-s;
+    
+            margin: util.rem(8) 0 0 util.rem(32);
         }
 
         &__submit {
@@ -131,7 +139,7 @@
             width: util.rem(264);
             height: util.rem(128);
     
-            background-image: radial-gradient(circle, var(--green) util.rem(4), var(--very-dark-blue) 1px);
+            background-image: radial-gradient(circle, var(--green) util.rem(4), var(--very-dark-blue) util.rem(1));
             background-size: util.rem(32) util.rem(32);
             background-repeat: space;
 

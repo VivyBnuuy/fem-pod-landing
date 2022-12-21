@@ -97,6 +97,14 @@
         }
     }
 
+    &__form {
+        justify-self: center;
+        display: grid;
+
+        width: 100%;
+        max-width: 54ch;
+    }
+
     &__input {
         justify-self: center;
 
@@ -109,10 +117,20 @@
         font-size: fonts.$font-s;
 
         padding: util.rem(12) util.rem(32);
-        margin: 0 0 util.rem(16);
 
         width: 100%;
         max-width: 60ch;
+    }
+
+    &__error {
+        display: none;
+
+        color: var(--red);
+        font-size: fonts.$font-s;
+
+        margin: util.rem(8) 0 0 util.rem(24);
+
+        max-width: fit-content;
     }
 
     &__submit {
@@ -129,7 +147,7 @@
         font-weight: fonts.$bold;
 
         padding: util.rem(12) util.rem(32);
-        margin: 0 0 util.rem(16);
+        margin: util.rem(16) 0 util.rem(16);
 
         width: 100%;
         max-width: 60ch;

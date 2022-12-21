@@ -37,9 +37,13 @@
             <img class="card__logos-img" src="assets/desktop/pocket-casts.svg" alt="Pocket Casts logo">
           </div>
 
-          <input class="card__input" placeholder="Email address">
+          <form class="card__form" action="#">
+            <input class="card__input" placeholder="Email address">
 
-          <button class="card__submit">Request Access</button>
+            <span class="card__error">Oops! Please check your email.</span>
+  
+            <button class="card__submit" type="submit">Request Access</button>
+          </form>
         </div>
 
         <!-- Container for tablet and bigger displays -->
@@ -66,11 +70,13 @@
   
             <button class="card__submit">Request Access</button>
           </div>
+
+          <span class="card__error">Oops! Please check your email.</span>
         </div>
 
         <div class="card__pattern"></div>
       </article>
     </main>
-    <script src="dist/js/main.js"></script>
+    <script src="src/js/main.js"></script>
   </body>
 </html>
