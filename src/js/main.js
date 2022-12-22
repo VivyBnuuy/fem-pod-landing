@@ -20,6 +20,7 @@ const largeLogosElement = getLogosElement[1];
 // Verify email address
 const emailRegExp = /^(?:(?![@.]).*(?<!@.*)(?<![.@])@{1}(?![@.])(?!.*[@*'(),!? _#/$%&;:<>+="\\]).*(?<![.@])\.{1}[a-zA-Z]+$)/;
 let screenWidth = screen.width;
+let errorShown = false;
 
 // Mobile verification
 function validateEmailMobile(e) {
@@ -35,6 +36,8 @@ function validateEmailMobile(e) {
         largeErrorElement.style.color = "var(--red)";
         largeErrorElement.style.display = "block";
         largeErrorElement.innerHTML = "Email address cannot be empty.";
+
+        errorShown = true;
     }
 
     // RegEx not matched but something is typed
@@ -47,6 +50,8 @@ function validateEmailMobile(e) {
         largeErrorElement.style.color = "var(--red)";
         largeErrorElement.style.display = "block";
         largeErrorElement.innerHTML = "Oops! Please check your email.";
+
+        errorShown = true;
     }
 
     // RegEx is matched
@@ -59,6 +64,8 @@ function validateEmailMobile(e) {
         largeErrorElement.style.color = "var(--green)";
         largeErrorElement.style.display = "block";
         largeErrorElement.innerHTML = "Success! An email was sent to your address.";
+
+        errorShown = true;
     }
 }
 
@@ -66,6 +73,8 @@ function validateEmailMobile(e) {
 function checkInputMobile(e) {
     e.target.nextElementSibling.style.display = "none"; 
     largeErrorElement.style.display = "none";
+
+    errorShown = false;
 }
 
 // Larger displays verification
@@ -82,6 +91,8 @@ function validateEmailLarge(e) {
         mobileErrorElement.style.color = "var(--red)";
         mobileErrorElement.style.display = "block";
         mobileErrorElement.innerHTML = "Email address cannot be empty.";
+
+        errorShown = true;
 
         if (screenWidth < 1080) {
             largeLogosElement.style.margin = "1.9375rem 0 0 0";
@@ -101,6 +112,8 @@ function validateEmailLarge(e) {
         mobileErrorElement.style.display = "block";
         mobileErrorElement.innerHTML = "Oops! Please check your email.";
 
+        errorShown = true;
+
         if (screenWidth < 1080) {
             largeLogosElement.style.margin = "1.9375rem 0 0 0";
         } else {
@@ -119,6 +132,8 @@ function validateEmailLarge(e) {
         mobileErrorElement.style.display = "block";
         mobileErrorElement.innerHTML = "Success! An email was sent to your address.";
 
+        errorShown = true;
+
         if (screenWidth < 1080) {
             largeLogosElement.style.margin = "1.9375rem 0 0 0";
         } else {
@@ -131,6 +146,8 @@ function validateEmailLarge(e) {
 function checkInputLarge(e) {
     largeErrorElement.style.display = "none";
     mobileErrorElement.style.display = "none";
+
+    errorShown = false;
 
     if (screenWidth < 1080) {
         largeLogosElement.style.margin = "3.5rem 0 0 0";
@@ -147,13 +164,24 @@ function resizeCheck() {
     // Preserve text in the input field
     if (screenWidth >= 768) {
         getInputElement[0].value = getInputElement[1].value;
-        
     } else {
         getInputElement[1].value = getInputElement[0].value;
     }
 
-    // Preserve error message states
+    // Adjust margins if error message is shown when switching layouts
+    if (screenWidth >= 1080 && errorShown == true) {
+        largeLogosElement.style.margin = "2.4375rem 0 0 0";
+    } else {
+        largeLogosElement.style.margin = "4rem 0 0 0";
+    }
 
+    if (screenWidth < 1080 && screenWidth > 768 && errorShown == true) {
+        largeLogosElement.style.margin = "1.9375rem 0 0 0";
+    }
+    
+    if (screenWidth < 1080 && screenWidth > 768 && errorShown == false){
+        largeLogosElement.style.margin = "3.5rem 0 0 0";
+    }
 }
 
 // Add event listeners to the input and submit parts of the page
@@ -167,6 +195,7 @@ function listenInputs() {
         getInputElement[1].addEventListener("input", checkInputLarge);
         getSubmitElement[1].addEventListener("click", validateEmailLarge);
 
+        // Event listener for when the window is resized
         window.addEventListener("resize", resizeCheck);
     }
 }
