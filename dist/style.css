@@ -79,7 +79,7 @@ main {
   z-index: -900;
   height: 100vh;
   width: 100vw;
-  background-image: url("../../../assets/mobile/image-host.jpg");
+  background-image: url("../assets/mobile/image-host.jpg");
   background-size: cover;
   filter: opacity(5%);
 }
@@ -218,7 +218,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   .background {
-    background-image: url("../../../assets/tablet/image-host.jpg");
+    background-image: url("../assets/tablet/image-host.jpg");
     background-size: auto;
     background-repeat: no-repeat;
     background-position: top right;
@@ -332,7 +332,7 @@ main {
     max-width: 90rem;
   }
   .background {
-    background-image: url("../../../assets/desktop/image-host.jpg");
+    background-image: url("../assets/desktop/image-host.jpg");
     background-size: auto;
     background-repeat: no-repeat;
     background-position-x: 175%;
@@ -365,7 +365,7 @@ main {
 }
 @media screen and (min-width: 1200px) {
   .background {
-    background-image: url("../../../assets/desktop/image-host.jpg");
+    background-image: url("../assets/desktop/image-host.jpg");
     background-size: auto;
     background-repeat: no-repeat;
     background-position-x: right;

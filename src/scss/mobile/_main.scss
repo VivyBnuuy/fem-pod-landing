@@ -17,17 +17,3 @@ main {
     display: grid;
     grid-template: auto / auto;
 }
-
-.background {
-    grid-area: 1 / 1 / 2 / 2;
-
-    z-index: -900;
-
-    height: 100vh;
-    width: 100vw;
-
-    background-image: url("../../../assets/mobile/image-host.jpg");
-    background-size: cover;
-
-    filter: opacity(5%);
-}
