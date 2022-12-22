@@ -3,6 +3,17 @@
 @use "../global/typography" as fonts;
 
 @media screen and (min-width: 1080px) {
+    body {
+        display: grid;
+    }
+
+    main {
+        grid-template: auto / minmax(auto, util.rem(1440));
+        justify-self: center;
+
+        max-width: util.rem(1440);
+    }
+    
     .background {
         background-image: url("../../../assets/desktop/image-host.jpg");
         background-size: auto;
@@ -10,6 +21,8 @@
         background-position-x: 175%;
         background-position-y: util.rem(144);
         filter: unset;
+
+        width: 100%;
     }
 
     .card {
